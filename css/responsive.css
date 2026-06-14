@@ -1,0 +1,97 @@
+/* ========== TABLET (≤1024px) ========== */
+@media (max-width: 1024px) {
+  .hero-inner   { grid-template-columns: 1fr; min-height: auto; padding: 52px 0 44px; }
+  .hero-visual  { display: none; }
+  .hero-content { max-width: 100%; }
+
+  .about-grid   { grid-template-columns: 1fr; gap: 44px; }
+  .svc-intro    { grid-template-columns: 1fr; gap: 28px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 44px; }
+}
+
+/* ========== MOBILE (≤900px) ========== */
+@media (max-width: 900px) {
+  :root { --nav-h: 64px; }
+  .container { padding: 0 20px; }
+  nav { padding: 0 20px; }
+  footer { padding: 36px 20px; }
+
+  /* Screen sections become auto-height on mobile */
+  .screen, .screen-auto {
+    min-height: auto;
+    padding: 56px 0;
+  }
+  /* Keep hero full screen */
+  .hero { min-height: 100vh; }
+
+  /* Nav */
+  .nav-links  { display: none; }
+  .nav-cta    { display: none; }
+  .nav-burger { display: flex; }
+
+  /* Hero — hide photo */
+  .hero-visual { display: none; }
+  .hero-inner  { grid-template-columns: 1fr; min-height: auto; padding: 44px 0 36px; }
+  .hero-stats  { flex-wrap: wrap; }
+  .hero-stat   { flex: 1 1 45%; border-right:none; padding-right:0; margin-right:0; border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:14px; }
+  .hero-stat:last-child { border-bottom:none; padding-bottom:0; margin-bottom:0; }
+
+  /* For Whom */
+  .fw-grid    { grid-template-columns: 1fr; }
+  .pain-block { grid-template-columns: 1fr; padding: 28px 20px; gap: 28px; }
+
+  /* Services */
+  .svc-intro    { grid-template-columns: 1fr; gap: 24px; }
+  .svc-grid     { grid-template-columns: 1fr; }
+  .svc-card-full { grid-template-columns: 1fr; gap: 28px; padding: 32px 20px; }
+
+  /* Cases */
+  .cases-header { grid-template-columns: 1fr; gap: 12px; }
+  .cases-grid   { grid-template-columns: 1fr 1fr; }
+  .cases-note   { flex-direction: column; text-align: center; gap: 20px; }
+
+  /* Pricing */
+  .pricing-grid { grid-template-columns: 1fr; }
+  .price-card.featured { margin: 0; }
+
+  /* Special */
+  .special-inner { grid-template-columns: 1fr; gap: 32px; }
+  .timer-block   { min-width: auto; width: 100%; }
+
+  /* Process */
+  .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .process-steps::before { display: none; }
+
+  /* FAQ */
+  .faq-grid { grid-template-columns: 1fr; }
+
+  /* About */
+  .about-founders { gap: 12px; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
+  .footer-cta   { padding: 72px 20px; }
+  .scroll-top   { bottom: 16px; right: 16px; }
+}
+
+/* ========== SMALL MOBILE (≤600px) ========== */
+@media (max-width: 600px) {
+  .hero-title  { font-size: 28px; }
+  .hero-btns   { flex-direction: column; }
+  .btn-primary, .btn-secondary { justify-content: center; width: 100%; }
+
+  .cases-grid     { grid-template-columns: 1fr; }
+  .about-numbers  { grid-template-columns: 1fr 1fr; }
+  .about-founders { flex-direction: column; }
+  .process-steps  { grid-template-columns: 1fr; }
+  .contact-social { flex-direction: column; }
+
+  .faq-header      { padding: 20px 18px; }
+  .faq-body        { padding: 0 18px; }
+  .faq-item.open .faq-body { padding: 0 18px 20px; }
+
+  .svc-card, .price-card, .fw-card, .case-card { padding: 28px 18px; }
+  .cases-note, .pain-block { padding: 22px 18px; }
+  .timer-block { padding: 24px 20px; }
+}
