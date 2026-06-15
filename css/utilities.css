@@ -1,22 +1,30 @@
 /* ========== RESET & CSS VARIABLES ========== */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
-  --gold:       #C9972C;
-  --gold-light: #E8B84B;
-  --black:      #0A0A0A;
-  --dark:       #111111;
-  --dark2:      #1A1A1A;
-  --gray:       #666666;
+  --gold: #c9972c;
+  --gold-light: #e8b84b;
+  --black: #0a0a0a;
+  --dark: #111111;
+  --dark2: #1a1a1a;
+  --gray: #666666;
   --gray-light: #999999;
-  --white:      #FFFFFF;
-  --border:     rgba(201,151,44,0.2);
-  --nav-h:      72px;
+  --white: #ffffff;
+  --border: rgba(201, 151, 44, 0.2);
+  --nav-h: 72px;
 }
 
 body {
-  font-family: 'Onest', sans-serif;
+  font-family: "Onest", sans-serif;
   background: var(--black);
   color: var(--white);
   font-size: 16px;
@@ -24,19 +32,25 @@ body {
   overflow-x: hidden;
 }
 
-img { max-width: 100%; display: block; }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
 
 /* ========== FULL-SCREEN SECTION ========== */
-/* Each major section fills the viewport */
 .screen {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-/* Sections that naturally overflow (lots of cards) keep min-height but don't force */
 .screen-auto {
   min-height: 100vh;
   padding: 80px 0;
@@ -45,8 +59,14 @@ ul { list-style: none; }
   justify-content: center;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-.gold { color: var(--gold); }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.gold {
+  color: var(--gold);
+}
 
 /* ========== TAG ========== */
 .tag {
@@ -55,7 +75,7 @@ ul { list-style: none; }
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--gold);
-  font-family: 'Unbounded', sans-serif;
+  font-family: "Unbounded", sans-serif;
   font-weight: 400;
   margin-bottom: 20px;
   border: 1px solid var(--border);
@@ -65,7 +85,7 @@ ul { list-style: none; }
 
 /* ========== HEADINGS ========== */
 .section-title {
-  font-family: 'Unbounded', sans-serif;
+  font-family: "Unbounded", sans-serif;
   font-size: clamp(26px, 3.5vw, 44px);
   font-weight: 700;
   line-height: 1.15;
@@ -88,7 +108,7 @@ ul { list-style: none; }
 .btn-primary {
   background: var(--gold);
   color: var(--black);
-  font-family: 'Unbounded', sans-serif;
+  font-family: "Unbounded", sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -96,34 +116,48 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: background .25s, transform .2s;
+  transition:
+    background 0.25s,
+    transform 0.2s;
   cursor: pointer;
   border: none;
 }
-.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
 
 .btn-secondary {
   background: transparent;
   color: var(--white);
-  font-family: 'Unbounded', sans-serif;
+  font-family: "Unbounded", sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.5px;
   padding: 16px 32px;
-  border: 1px solid rgba(255,255,255,0.22);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: border-color .25s, color .25s, transform .2s;
+  transition:
+    border-color 0.25s,
+    color 0.25s,
+    transform 0.2s;
   cursor: pointer;
 }
-.btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-1px);
+}
 
 /* ========== SCROLL-TO-TOP ========== */
 .scroll-top {
   position: fixed;
-  bottom: 28px; right: 28px;
-  width: 42px; height: 42px;
+  bottom: 28px;
+  right: 28px;
+  width: 42px;
+  height: 42px;
   background: var(--gold);
   color: var(--black);
   border: none;
@@ -134,8 +168,15 @@ ul { list-style: none; }
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .3s, transform .3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
   z-index: 500;
 }
-.scroll-top.visible { opacity: 1; pointer-events: all; }
-.scroll-top:hover   { transform: translateY(-3px); }
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+.scroll-top:hover {
+  transform: translateY(-3px);
+}

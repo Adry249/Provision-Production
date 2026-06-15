@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — Provision Production</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/admin-layout.css" />
+  </head>
+  <body>
+    <!-- LOGIN -->
+    <div id="loginScreen">
+      <div class="login-box">
+        <div class="login-logo">PROVISION PRODUCTION</div>
+        <div class="login-title">Панель администратора</div>
+        <div class="login-sub">Введите пароль для доступа</div>
+        <input
+          type="password"
+          id="passwordInput"
+          placeholder="Пароль"
+          autocomplete="current-password"
+        />
+        <button class="login-btn" onclick="doLogin()">ВОЙТИ</button>
+        <div class="login-error" id="loginError">Неверный пароль</div>
+      </div>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div id="adminPanel">
+      <header>
+        <div class="header-logo">PROVISION · ADMIN</div>
+        <div class="header-right">
+          <div class="total-badge">
+            Всего заявок: <span id="totalCount">0</span>
+          </div>
+          <button class="logout-btn" onclick="doLogout()">Выйти</button>
+        </div>
+      </header>
+
+      <main>
+        <!-- Stats -->
+        <div class="stats">
+          <div class="stat-card">
+            <div class="num" id="sNou">0</div>
+            <div class="lbl">Новые</div>
+          </div>
+          <div class="stat-card">
+            <div class="num" id="sInCurs">0</div>
+            <div class="lbl">В процессе</div>
+          </div>
+          <div class="stat-card">
+            <div class="num" id="sInchis">0</div>
+            <div class="lbl">Закрытые</div>
+          </div>
+          <div class="stat-card">
+            <div class="num" id="sTotal">0</div>
+            <div class="lbl">Всего</div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+          <input
+            class="search-box"
+            type="text"
+            id="searchInput"
+            placeholder="Поиск по имени, телефону, Instagram..."
+          />
+          <button class="filter-btn active" onclick="setFilter('all', this)">
+            Все
+          </button>
+          <button class="filter-btn" onclick="setFilter('nou', this)">
+            Новые
+          </button>
+          <button class="filter-btn" onclick="setFilter('in_curs', this)">
+            В процессе
+          </button>
+          <button class="filter-btn" onclick="setFilter('inchis', this)">
+            Закрытые
+          </button>
+          <button class="refresh-btn" onclick="loadData()">↻ Обновить</button>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Имя</th>
+                <th>Instagram</th>
+                <th>Телефон</th>
+                <th>Пакет</th>
+                <th>Сообщение</th>
+                <th>Дата</th>
+                <th>Статус</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr class="empty-row">
+                <td colspan="8">Загрузка...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

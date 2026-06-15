@@ -12,7 +12,7 @@ window.addEventListener('scroll', function () {
   if (scrollBtn) scrollBtn.classList.toggle('visible', window.scrollY > 400);
 });
 
-// Fade-up reveal on scroll
+// Fade-up
 const fadeSelectors = [
   '.fw-card', '.svc-card', '.case-card', '.price-card',
   '.about-num-card', '.process-step', '.faq-item',

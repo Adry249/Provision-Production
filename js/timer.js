@@ -1,5 +1,4 @@
 // ========== COUNTDOWN TIMER ==========
-// Counts down 60 minutes from page load — resets on refresh (intentional for UX)
 
 (function () {
   const DURATION_MS = 60 * 60 * 1000; // 60 minutes
